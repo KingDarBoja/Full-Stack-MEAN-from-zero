@@ -7,6 +7,8 @@ if (!uri) {
   throw new Error('Missing MONGODB_URI environment variable');
 }
 
+const mongoUri: string = uri;
+
 let client: MongoClient;
 let db: Db;
 
@@ -17,7 +19,7 @@ let db: Db;
 export async function connectDB(): Promise<Db> {
   if (db) return db;
 
-  client = new MongoClient(uri, {
+  client = new MongoClient(mongoUri, {
     serverApi: {
       version: ServerApiVersion.v1,
       strict: true,
