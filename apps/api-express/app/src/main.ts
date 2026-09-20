@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
-import { connectDB, closeDB } from './config/database';
+import { connectDB, closeDB } from './config/database.js';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
