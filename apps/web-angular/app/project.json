@@ -54,6 +54,10 @@
         "proxyConfig": "apps/web-angular/app/proxy.express.conf.json"
       },
       "configurations": {
+        "nest": {
+          "buildTarget": "web-angular:build:development",
+          "proxyConfig": "apps/web-angular/app/proxy.nest.conf.json"
+        },
         "production": {
           "buildTarget": "web-angular:build:production"
         },
