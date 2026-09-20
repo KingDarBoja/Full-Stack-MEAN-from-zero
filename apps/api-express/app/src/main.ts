@@ -31,7 +31,7 @@ app.get('/api/health', (_req: Request, res: Response) => {
 /**
  * The error handling middleware is used to catch and handle errors that occur
  * during the request processing.
- * 
+ *
  * @param err Error object
  * @param _req Request object
  * @param res Response object

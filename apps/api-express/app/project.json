@@ -1,7 +1,7 @@
 {
-  "name": "backend",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "backend/src",
+  "name": "api-express",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/api-express/app/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -11,12 +11,12 @@
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "dist/backend",
+        "outputPath": "dist/apps/api-express/app",
         "format": ["cjs"],
         "bundle": false,
-        "main": "backend/src/main.ts",
-        "tsConfig": "backend/tsconfig.app.json",
-        "assets": ["backend/src/assets"],
+        "main": "apps/api-express/app/src/main.ts",
+        "tsConfig": "apps/api-express/app/tsconfig.app.json",
+        "assets": ["apps/api-express/app/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
@@ -42,8 +42,8 @@
       "cache": true,
       "executor": "@nx/js:prune-lockfile",
       "outputs": [
-        "{workspaceRoot}/dist/backend/package.json",
-        "{workspaceRoot}/dist/backend/pnpm-lock.yaml"
+        "{workspaceRoot}/dist/apps/api-express/app/package.json",
+        "{workspaceRoot}/dist/apps/api-express/app/pnpm-lock.yaml"
       ],
       "options": {
         "buildTarget": "build"
@@ -52,7 +52,9 @@
     "copy-workspace-modules": {
       "dependsOn": ["build"],
       "cache": true,
-      "outputs": ["{workspaceRoot}/dist/backend/workspace_modules"],
+      "outputs": [
+        "{workspaceRoot}/dist/apps/api-express/app/workspace_modules"
+      ],
       "executor": "@nx/js:copy-workspace-modules",
       "options": {
         "buildTarget": "build"
@@ -68,15 +70,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "backend:build",
+        "buildTarget": "api-express:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "backend:build:development"
+          "buildTarget": "api-express:build:development"
         },
         "production": {
-          "buildTarget": "backend:build:production"
+          "buildTarget": "api-express:build:production"
         }
       }
     },
@@ -84,7 +86,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "backend/jest.config.cts",
+        "jestConfig": "apps/api-express/app/jest.config.cts",
         "passWithNoTests": true
       }
     }
