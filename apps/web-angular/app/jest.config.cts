@@ -1,8 +1,8 @@
 module.exports = {
-  displayName: 'frontend',
-  preset: '../jest.preset.js',
+  displayName: 'web-angular',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../coverage/frontend',
+  coverageDirectory: '../../../coverage/apps/web-angular/app',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
@@ -17,5 +17,5 @@ module.exports = {
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',
     'jest-preset-angular/build/serializers/html-comment',
-  ]
+  ],
 };

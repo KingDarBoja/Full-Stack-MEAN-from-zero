@@ -1,14 +1,11 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "moduleResolution": "bundler",
     "allowJs": true,
-    "outDir": "../dist/out-tsc",
+    "outDir": "../../../dist/out-tsc",
     "module": "commonjs",
-    "types": [
-      "cypress",
-      "node"
-    ],
+    "types": ["cypress", "node"],
     "sourceMap": false,
     "strict": true,
     "noImplicitOverride": true,
